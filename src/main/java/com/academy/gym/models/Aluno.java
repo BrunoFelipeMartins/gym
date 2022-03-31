@@ -33,7 +33,7 @@ public class Aluno implements Serializable {
     @Column(nullable = false, length = 13)
     private String telefone;
     @Column(nullable = false, length = 12)
-    private Date data_nascimento;
+    private Date dataNascimento;
     @Column(nullable = false, length = 11)
     private String cpf;
     @Column(nullable = false, length = 70)
