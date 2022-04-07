@@ -8,6 +8,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface GymFichaRepository extends JpaRepository<Ficha, UUID> {
+public interface FichaRepository extends JpaRepository<Ficha, UUID> {
     
 }

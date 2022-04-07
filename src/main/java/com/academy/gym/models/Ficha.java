@@ -23,6 +23,7 @@ import javax.persistence.Table;
 public class Ficha implements Serializable {
     private static final long serialVersionUID = 1L;
     
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;

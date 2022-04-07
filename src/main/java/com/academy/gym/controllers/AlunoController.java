@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
+//import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+//@Controller
 @EnableJpaRepositories
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -38,7 +38,7 @@ public class AlunoController {
         this.alunoService = alunoService;
     }
 
-    @GetMapping()
+    @GetMapping("/aluno")
     public List<Aluno> getAluno(){
         return alunoService.getAll();
     }
@@ -61,7 +61,7 @@ public class AlunoController {
         Optional<Aluno> alunoOptional = alunoService.findById(id);
         return alunoService.save(aluno);  
     }*/  
-    @PostMapping()
+    @PostMapping("/aluno")
     public ResponseEntity<Object> salvar(@RequestBody @Valid Aluno aluno){
         return ResponseEntity.status(HttpStatus.OK).body(alunoService.save(aluno));
     }
