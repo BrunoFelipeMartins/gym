@@ -23,9 +23,9 @@ public class FichaController {
         return fichaRepository.findAll();
     }
     
-    @GetMapping("/{id")
+    @GetMapping("/{id}")
     public Ficha findById(@PathVariable long id) {
-        return fichaRepository.findById(id)
-            .
+        return fichaRepository.findById(id);
+            
     }
 }

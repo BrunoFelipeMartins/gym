@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class FichaService {
     
-    final FichaRepository fichaRepository
+    final FichaRepository fichaRepository;
 
     public FichaService(FichaRepository fichaRepository) {
         this.fichaRepository = fichaRepository;
