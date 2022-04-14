@@ -12,7 +12,4 @@ public class FichaService {
     public FichaService(FichaRepository fichaRepository) {
         this.fichaRepository = fichaRepository;
     }
-
-    
-    
 }
