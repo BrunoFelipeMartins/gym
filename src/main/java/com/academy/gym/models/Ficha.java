@@ -3,7 +3,6 @@ package com.academy.gym.models;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
-import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,12 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@ToString
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode
+
 @Entity
 @Table(name = "FICHA")
 public class Ficha implements Serializable {
@@ -37,4 +31,43 @@ public class Ficha implements Serializable {
     private Date data_inicio;
     @Column(nullable = false, length = 10)
     private Date dia;
+    
+    public UUID getId() {
+        return id;
+    }
+    public void setId(UUID id) {
+        this.id = id;
+    }
+    public int getSerie() {
+        return serie;
+    }
+    public void setSerie(int serie) {
+        this.serie = serie;
+    }
+    public int getRepeticao() {
+        return repeticao;
+    }
+    public void setRepeticao(int repeticao) {
+        this.repeticao = repeticao;
+    }
+    public int getCarga() {
+        return carga;
+    }
+    public void setCarga(int carga) {
+        this.carga = carga;
+    }
+    public Date getData_inicio() {
+        return data_inicio;
+    }
+    public void setData_inicio(Date data_inicio) {
+        this.data_inicio = data_inicio;
+    }
+    public Date getDia() {
+        return dia;
+    }
+    public void setDia(Date dia) {
+        this.dia = dia;
+    }
+    
+    
 }

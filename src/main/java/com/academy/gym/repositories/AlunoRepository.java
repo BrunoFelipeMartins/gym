@@ -1,4 +1,4 @@
-package com.academy.gym.repositories;
+/*package com.academy.gym.repositories;
 
 
 import java.util.Optional;
@@ -19,4 +19,4 @@ public interface AlunoRepository extends JpaRepository<Aluno, UUID> {
 
     void save(Optional<Aluno> aluno);
         
-}
+}*/

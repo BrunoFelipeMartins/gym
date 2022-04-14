@@ -1,4 +1,4 @@
-package com.academy.gym.controllers;
+/*package com.academy.gym.controllers;
 
 import java.util.List;
 import java.util.Optional;
@@ -61,7 +61,7 @@ public class AlunoController {
         Optional<Aluno> alunoOptional = alunoService.findById(id);
         return alunoService.save(aluno);  
     }*/  
-    @PostMapping("/aluno")
+    /*@PostMapping("/aluno")
     public ResponseEntity<Object> salvar(@RequestBody @Valid Aluno aluno){
         return ResponseEntity.status(HttpStatus.OK).body(alunoService.save(aluno));
     }
@@ -81,3 +81,4 @@ public class AlunoController {
         
     }
 }
+*/

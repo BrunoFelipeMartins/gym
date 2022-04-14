@@ -9,7 +9,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface FichaRepository extends JpaRepository<Ficha, UUID> {
-
-    Ficha findById(long id);
     
 }
