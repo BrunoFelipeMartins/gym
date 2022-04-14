@@ -28,7 +28,7 @@ public class Ficha implements Serializable {
     @Column(nullable = false, length = 10)    
     private int carga;
     @Column(nullable = false, length = 10)
-    private Date data_inicio;
+    private Date dataInicio;
     @Column(nullable = false, length = 10)
     private Date dia;
     
@@ -56,11 +56,11 @@ public class Ficha implements Serializable {
     public void setCarga(int carga) {
         this.carga = carga;
     }
-    public Date getData_inicio() {
-        return data_inicio;
+    public Date getDataInicio() {
+        return dataInicio;
     }
-    public void setData_inicio(Date data_inicio) {
-        this.data_inicio = data_inicio;
+    public void setDataInicio(Date dataInicio) {
+        this.dataInicio = dataInicio;
     }
     public Date getDia() {
         return dia;
