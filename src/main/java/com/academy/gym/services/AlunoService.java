@@ -7,9 +7,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class AlunoService {
 
-    final AlunoRepository AlunoRepository; 
+    final AlunoRepository alunoRepository; 
 
     public AlunoService(AlunoRepository alunoRepository){
-        this.AlunoRepository = alunoRepository;
+        this.alunoRepository = alunoRepository;
     }
 }
