@@ -46,18 +46,18 @@ public class AlunoController {
         }
     }
     
-    /*@GetMapping("/alunos/{nome}")
-    public ResponseEntity<Aluno> getOneAluno(@PathVariable(value="nome") String nome) {
+    @GetMapping("/alunos/{nome}")
+    public ResponseEntity<Aluno> getOneNome(@PathVariable(value="nome") String nome) {
         Optional<Aluno> alunoO = alunoRepository.findByNome(nome);
         if (!alunoO.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }else {
             return new ResponseEntity<Aluno>(alunoO.get(),HttpStatus.OK);
         }
-    }*/
+    }
 
     @GetMapping("/alunos/{cpf}")
-    public ResponseEntity<Aluno> getOneAluno(@PathVariable(value="cpf") String cpf ) {
+    public ResponseEntity<Aluno> getOneCpf(@PathVariable(value="cpf") String cpf ) {
         Optional<Aluno> alunoO = alunoRepository.findByCpf(cpf);
         if (!alunoO.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

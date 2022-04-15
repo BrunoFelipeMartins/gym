@@ -12,5 +12,6 @@ import org.springframework.stereotype.Repository;
 public interface AlunoRepository extends JpaRepository<Aluno, UUID> {
 
     Optional<Aluno> findByCpf(String cpf);
+    Optional<Aluno> findByNome(String nome);
 
 }
