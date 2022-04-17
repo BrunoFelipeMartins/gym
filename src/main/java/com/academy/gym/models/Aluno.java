@@ -10,7 +10,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
  
 @ToString
 @Getter
@@ -22,6 +24,11 @@ import javax.persistence.Table;
 @Table(name = "ALUNO")
 public class Aluno implements Serializable {
     private static final long serialVersionUID = 1L;
+    
+    @OneToMany
+    private AlunoPlano alunoPlano;
+    @OneToMany
+    private Ficha ficha;
     
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)

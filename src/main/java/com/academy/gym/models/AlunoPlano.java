@@ -2,6 +2,7 @@ package com.academy.gym.models;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 import javax.persistence.Column;
@@ -9,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.*;
@@ -23,6 +26,12 @@ import lombok.*;
 @Table(name = "ALUNO_PLANO")
 public class AlunoPlano implements Serializable{
     private static final long serialVersionUID = 1l;
+
+    @ManyToOne
+    private List<Aluno> aluno;
+    @OneToOne
+    private Plano plano;
+    private AlunoPlano alunoPlano;//preciso colocar @OneToOne denovo
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -17,6 +18,11 @@ import javax.persistence.Table;
 public class Ficha implements Serializable {
     private static final long serialVersionUID = 1L;
     
+    @ManyToOne
+    private Exercicio exercicio;
+
+    @ManyToOne
+    private Aluno aluno;
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
