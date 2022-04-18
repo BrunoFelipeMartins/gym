@@ -9,7 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.*;
@@ -25,8 +26,10 @@ import lombok.*;
 public class Movimento implements Serializable {
     public static final long serialVersionUID = 1l;
 
-    @OneToOne
-    private Movimento movimento;
+    @ManyToMany
+    private Conta conta;
+    @OneToMany
+    private Caixa caixa;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

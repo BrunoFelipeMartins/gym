@@ -31,7 +31,7 @@ public class AlunoPlano implements Serializable{
     private List<Aluno> aluno;
     @OneToOne
     private Plano plano;
-    private AlunoPlano alunoPlano;//preciso colocar @OneToOne denovo
+    private Conta conta;//preciso colocar @OneToOne denovo
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
