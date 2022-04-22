@@ -2,13 +2,18 @@ package com.academy.gym.models;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -18,10 +23,15 @@ import javax.persistence.Table;
 public class Ficha implements Serializable {
     private static final long serialVersionUID = 1L;
     
-    @ManyToOne
-    private Exercicio exercicio;
+    @ManyToMany
+    @JoinTable(
+        name = "FichaExercicios",
+        joinColumns = @JoinColumn(name = "fichaId"),
+        inverseJoinColumns = @JoinColumn(name = "ExercicioId"))
+    Set<Exercicio> exercicios;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "alunoId")
     private Aluno aluno;
     
     @Id

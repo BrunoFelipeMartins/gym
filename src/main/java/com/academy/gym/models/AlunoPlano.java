@@ -7,11 +7,13 @@ import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.*;
@@ -27,11 +29,17 @@ import lombok.*;
 public class AlunoPlano implements Serializable{
     private static final long serialVersionUID = 1l;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "alunoId")
     private List<Aluno> aluno;
-    @OneToOne
-    private Plano plano;
-    private Conta conta;//preciso colocar @OneToOne denovo
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "planoId")
+    private List<Plano> plano;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "formulaPagamentoId")
+    private FormulaPagamento formulaPagamento;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "alunoplano")
+    private Conta conta;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
