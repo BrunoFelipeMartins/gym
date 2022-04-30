@@ -7,7 +7,6 @@ import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,15 +24,19 @@ public class Ficha implements Serializable {
     
     @ManyToMany
     @JoinTable(
-        name = "FichaExercicios",
-        joinColumns = @JoinColumn(name = "fichaId"),
-        inverseJoinColumns = @JoinColumn(name = "ExercicioId"))
-    Set<Exercicio> exercicios;
+        name = "FichaExercicios", 
+        joinColumns = @JoinColumn(name = "fichaId", referencedColumnName = "id", nullable = true),
+        inverseJoinColumns = @JoinColumn(name = "ExercicioId", referencedColumnName = "id", nullable = true))
+    private Set<Exercicio> exercicios;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "alunoId")
     private Aluno aluno;
     
+    /*@ManyToOne
+    @JoinColumn(name = "alunoId")
+    private Aluno aluno;*/
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;

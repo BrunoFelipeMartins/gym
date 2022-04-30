@@ -6,14 +6,16 @@ import java.util.List;
 import java.util.UUID;
 import lombok.*;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+
 
  
 @ToString
@@ -27,11 +29,13 @@ import javax.persistence.Table;
 public class Aluno implements Serializable {
     private static final long serialVersionUID = 1L;
     
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "aluno")
-    private List<AlunoPlano> alunoPlano;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "aluno")
-    private Ficha ficha; // ou List<Ficha> fichas;
-    
+    //@OneToMany(fetch = FetchType.LAZY, mappedBy = "aluno")
+    //private AlunoPlano alunoPlano;
+    @OneToMany(mappedBy = "aluno", cascade = CascadeType.ALL)
+    private List<Ficha> fichas;
+    //@OneToMany(mappedBy = "aluno")
+    //private Ficha ficha;
+
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
     private UUID id;

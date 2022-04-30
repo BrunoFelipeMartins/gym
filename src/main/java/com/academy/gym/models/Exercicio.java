@@ -25,7 +25,7 @@ public class Exercicio implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ManyToMany(mappedBy = "exercicios")
-    Set<Ficha> fichas;
+    private Set<Ficha> fichas;
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

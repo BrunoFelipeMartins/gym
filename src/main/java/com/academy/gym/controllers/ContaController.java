@@ -46,7 +46,7 @@ public class ContaController {
         }
     }
 
-    @PostMapping("/planos")
+    @PostMapping("/contas")
     public ResponseEntity<Conta> saveConta(@RequestBody @Valid Conta conta) {
         return new ResponseEntity<Conta>(contaRepository.save(conta), HttpStatus.CREATED);
     }

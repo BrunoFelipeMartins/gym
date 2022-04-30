@@ -46,8 +46,9 @@ public class PlanoController {
         }
     }
 
+
     @PostMapping("/planos")
-    public ResponseEntity<Plano> savePlano(@RequestBody @Valid Plano plano) {
+    public ResponseEntity<Plano> savePlanos(@RequestBody @Valid Plano plano) {
         return new ResponseEntity<Plano>(planoRepository.save(plano), HttpStatus.CREATED);
     }
     
